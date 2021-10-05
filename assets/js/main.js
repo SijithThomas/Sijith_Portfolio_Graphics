@@ -62,7 +62,35 @@ window.onload=()=>{
             })
         }
     }
+    for(let index=0; index<filterImg.length; index++){
+        filterImg[index].setAttribute("onclick","preview(this)");
+    }
 }
+/*===== Image Preview =====*/
+function preview(element){
+    const previewScreen=document.querySelector('.preview_screen'),
+      previewImg=previewScreen.querySelector("img"),
+      closeIcon=previewScreen.querySelector('.close_icon');
+  
+
+      previewScreen.style.display="block";
+      let selectedImg=element.querySelector("img").src;
+      previewImg.src=selectedImg;
+      let hyperLink=element.getAttribute('data-element');
+      const previewBtn=previewScreen.querySelector('.preview_btn');
+      if(hyperLink == "none"){
+        previewBtn.style.display="none";
+      }
+      else{
+          previewBtn.style.display="block";
+          previewBtn.href=hyperLink;
+      }
+      closeIcon.onclick=()=>{
+          previewScreen.style.display="none";
+      }
+}
+
+
 
 /*===== SCROLL REVEAL ANIMATION =====*/
 const sr = ScrollReveal({
