@@ -25,6 +25,8 @@
         <link rel="stylesheet" href="./assets/css/swiper-bundle.min.css">
         <!-- ===== BOX ICONS ===== -->
         <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+        <!-- ===== contact form ===== -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
         
     </head>
@@ -273,13 +275,13 @@
                         <span class="contact__text">Poovathinkal(h),<br>Angadikadavu,<br>Kannur,<br>Kerala - 670 706</span>
                     </div>
 
-                    <form action="" class="contact__form">
+                    <form id="submit-form" action="" class="contact__form">
                         <div class="contact__inputs">
-                            <input type="text" placeholder="Name" class="contact__input">
-                            <input type="mail" placeholder="Email" class="contact__input">
+                            <input type="text" placeholder="Name" class="contact__input" name="name">
+                            <input type="mail" placeholder="Email" class="contact__input" name="email">
                         </div>
 
-                        <textarea name="" id="" cols="0" rows="10" class="contact__input"></textarea>
+                        <textarea name="message" id="" cols="0" rows="10" class="contact__input"></textarea>
 
                         <input type="submit" value="Send" class="contact__button">
                     </form>
@@ -316,7 +318,25 @@
 
             </div>
         </footer>
-
+        <script>
+            $("#submit-form").submit((e)=>{
+                e.preventDefault()
+                $.ajax({
+                    url:"https://script.google.com/macros/s/AKfycbzuncejDa0HaR-BWOA4xWLk6TC6KLW3i6O24kaVV5XEM3pe3Gy79Cll7GyJVkhSv4SD/exec",
+                    data:$("#submit-form").serialize(),
+                    method:"post",
+                    success:function (response){
+                        alert("Form submitted successfully")
+                        window.location.reload()
+                        //window.location.href="https://google.com"
+                    },
+                    error:function (err){
+                        alert("Something Error")
+        
+                    }
+                })
+            })
+        </script>
         <!--===== SCROLL REVEAL =====-->
         <script src="https://unpkg.com/scrollreveal"></script>
 
