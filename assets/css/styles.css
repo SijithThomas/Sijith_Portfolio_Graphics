@@ -494,6 +494,24 @@ img{
     display: inline-block;
     margin-bottom: var(--mb-2);
 }
+.frm_alert{
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+.red_alert{
+    background-color: lightcoral;
+    border: 2px solid rgb(223, 62, 62);
+    color: rgb(223, 62, 62);;
+}
+.green_alert{
+    background-color: lightgreen;
+    border: 2px solid rgb(46, 223, 46);
+    color: rgb(46, 223, 46);;
+    
+}
 .contact__inputs{
     display: grid;
     grid-template-columns: repeat(2, 1fr);

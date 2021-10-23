@@ -276,6 +276,7 @@
                     </div>
 
                     <form id="submit-form" action="" class="contact__form">
+                        <div class="frm_alert"></div>
                         <div class="contact__inputs">
                             <input type="text" placeholder="Name" class="contact__input" name="name">
                             <input type="mail" placeholder="Email" class="contact__input" name="email">
@@ -326,15 +327,23 @@
                     data:$("#submit-form").serialize(),
                     method:"post",
                     success:function (response){
-                        alert("Form submitted successfully")
-                        window.location.reload()
-                        //window.location.href="https://google.com"
+                        $('.frm_alert').addClass('green_alert');
+                        $('.frm_alert').append("<p>Form submitted successfully</p>")
+                        setTimeout(function() {
+                            window.location.reload()
+                        }, 3000);
+                        // window.location.reload()
                     },
                     error:function (err){
-                        alert("Something Error")
+                        $('.frm_alert').addClass('red_alert');
+                        $('.frm_alert').append("<p>Oops! Something went wrong</p>")
+                        setTimeout(function() {
+                            window.location.reload()
+                        }, 1000);
         
                     }
                 })
+                $('.contact__input').val(" ");
             })
         </script>
         <!--===== SCROLL REVEAL =====-->
