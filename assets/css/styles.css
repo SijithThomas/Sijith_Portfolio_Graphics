@@ -502,14 +502,14 @@ img{
     margin-bottom: 10px;
 }
 .red_alert{
-    background-color: lightcoral;
+    background-color: rgba(240, 128, 128,0.7);
     border: 2px solid rgb(223, 62, 62);
-    color: rgb(223, 62, 62);;
+    color: rgb(223, 62, 62);
 }
 .green_alert{
-    background-color: lightgreen;
+    background-color: rgba(144, 238, 144,0.7);
     border: 2px solid rgb(46, 223, 46);
-    color: rgb(46, 223, 46);;
+    color: rgb(46, 223, 46);
     
 }
 .contact__inputs{
